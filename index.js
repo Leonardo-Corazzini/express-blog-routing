@@ -1,5 +1,6 @@
 const express = require('express')
-const posts = require('./posts.js')
+const posts = require('./data/posts.js')
+const postsRouter = require('./routers/posts.js')
 const app = express()
 const port = 3000
 
@@ -16,7 +17,7 @@ app.get('/bacheca', (req, res) => {
         count: posts.length,
     })
 })
-
+app.use('/posts', postsRouter)
 app.listen(port, () => {
 console.log(port)
 })
