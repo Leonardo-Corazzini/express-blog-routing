@@ -14,9 +14,9 @@ router.get('/:id', (req, res) => {
 	const id = parseInt(req.params.id)
 	console.log(`Post con id: ${id}`)
 
-	const pizza = posts.find((p) => p.id === id)
+	const post = posts.find((p) => p.id === id)
 
-	res.json(pizza)
+	res.json(post)
 })
 
 // store
